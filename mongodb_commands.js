@@ -859,3 +859,27 @@ db.students.find({
 |         $all: ["Python", "MongoDB"]
 |     }
 | })
+
+
+db.products.countDocuments()
+
+  db.products.find()
+  
+  db.products.find({price : {$gt : 10000} })
+
+  db.products.createIndex({price:1})
+
+ db.products.find({price: {$gt : 20000}}).explain("executionStats")
+
+
+  db.products.getIndexes()
+
+  db.products.aggregate([{$group : {_id : "$category"}}])
+
+  db.products.find( { category : "Laptops" , price : {$gt : 40000} } )
+
+  db.products.dropIndex("price_1")
+
+ db.products.find( { category : "Laptops" , price : {$gt : 40000} } ).explain("executionStats")
+
+ db.products.createIndex({category : 1 , price : 1})
